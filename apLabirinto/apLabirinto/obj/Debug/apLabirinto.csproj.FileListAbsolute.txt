@@ -18,3 +18,13 @@ C:\Users\GUSTAVO\Desktop\LabirintoCSharp-master\LabirintoCSharp-master\Labirinto
 C:\Users\GUSTAVO\Desktop\LabirintoCSharp-master\LabirintoCSharp-master\LabirintoCSharp-master\Projeto1 ED2\apLabirinto\apLabirinto\obj\Debug\apLabirinto.csproj.CoreCompileInputs.cache
 C:\Users\GUSTAVO\Desktop\LabirintoCSharp-master\LabirintoCSharp-master\LabirintoCSharp-master\Projeto1 ED2\apLabirinto\apLabirinto\obj\Debug\apLabirinto.exe
 C:\Users\GUSTAVO\Desktop\LabirintoCSharp-master\LabirintoCSharp-master\LabirintoCSharp-master\Projeto1 ED2\apLabirinto\apLabirinto\obj\Debug\apLabirinto.pdb
+C:\Users\Cliente\Desktop\Labirinto_C_Sharp-master\apLabirinto\apLabirinto\obj\Debug\apLabirinto.csprojAssemblyReference.cache
+C:\Users\Cliente\Desktop\Labirinto_C_Sharp-master\apLabirinto\apLabirinto\obj\Debug\apLabirinto.Form1.resources
+C:\Users\Cliente\Desktop\Labirinto_C_Sharp-master\apLabirinto\apLabirinto\obj\Debug\apLabirinto.Properties.Resources.resources
+C:\Users\Cliente\Desktop\Labirinto_C_Sharp-master\apLabirinto\apLabirinto\obj\Debug\apLabirinto.csproj.GenerateResource.cache
+C:\Users\Cliente\Desktop\Labirinto_C_Sharp-master\apLabirinto\apLabirinto\obj\Debug\apLabirinto.csproj.CoreCompileInputs.cache
+C:\Users\Cliente\Desktop\Labirinto_C_Sharp-master\apLabirinto\apLabirinto\obj\Debug\apLabirinto.exe
+C:\Users\Cliente\Desktop\Labirinto_C_Sharp-master\apLabirinto\apLabirinto\obj\Debug\apLabirinto.pdb
+C:\Users\Cliente\Desktop\Labirinto_C_Sharp-master\apLabirinto\apLabirinto\bin\Debug\apLabirinto.exe.config
+C:\Users\Cliente\Desktop\Labirinto_C_Sharp-master\apLabirinto\apLabirinto\bin\Debug\apLabirinto.exe
+C:\Users\Cliente\Desktop\Labirinto_C_Sharp-master\apLabirinto\apLabirinto\bin\Debug\apLabirinto.pdb

@@ -44,18 +44,17 @@
             this.dgvLabirinto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvLabirinto.Location = new System.Drawing.Point(3, 82);
             this.dgvLabirinto.Name = "dgvLabirinto";
-            this.dgvLabirinto.Size = new System.Drawing.Size(384, 405);
+            this.dgvLabirinto.Size = new System.Drawing.Size(788, 536);
             this.dgvLabirinto.TabIndex = 0;
             // 
             // dgvCaminhos
             // 
             this.dgvCaminhos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCaminhos.Location = new System.Drawing.Point(418, 82);
+            this.dgvCaminhos.Location = new System.Drawing.Point(797, 82);
             this.dgvCaminhos.Name = "dgvCaminhos";
-            this.dgvCaminhos.Size = new System.Drawing.Size(712, 438);
+            this.dgvCaminhos.Size = new System.Drawing.Size(333, 438);
             this.dgvCaminhos.TabIndex = 1;
-            this.dgvCaminhos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCaminhos_CellContentClick);
-            this.dgvCaminhos.SelectionChanged += new System.EventHandler(this.dgvCaminhos_SelectionChanged);
+            this.dgvCaminhos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCaminhos_CellClick);
             // 
             // label1
             // 
@@ -71,7 +70,7 @@
             // 
             this.lbCaminhos.AutoSize = true;
             this.lbCaminhos.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbCaminhos.Location = new System.Drawing.Point(452, 54);
+            this.lbCaminhos.Location = new System.Drawing.Point(648, 48);
             this.lbCaminhos.Name = "lbCaminhos";
             this.lbCaminhos.Size = new System.Drawing.Size(194, 22);
             this.lbCaminhos.TabIndex = 3;
@@ -80,7 +79,7 @@
             // btnAbrirArquivo
             // 
             this.btnAbrirArquivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAbrirArquivo.Location = new System.Drawing.Point(758, 21);
+            this.btnAbrirArquivo.Location = new System.Drawing.Point(970, 21);
             this.btnAbrirArquivo.Name = "btnAbrirArquivo";
             this.btnAbrirArquivo.Size = new System.Drawing.Size(69, 49);
             this.btnAbrirArquivo.TabIndex = 4;
@@ -91,7 +90,7 @@
             // btnEncontrarCaminhos
             // 
             this.btnEncontrarCaminhos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEncontrarCaminhos.Location = new System.Drawing.Point(848, 21);
+            this.btnEncontrarCaminhos.Location = new System.Drawing.Point(1055, 21);
             this.btnEncontrarCaminhos.Name = "btnEncontrarCaminhos";
             this.btnEncontrarCaminhos.Size = new System.Drawing.Size(75, 49);
             this.btnEncontrarCaminhos.TabIndex = 5;
@@ -112,7 +111,6 @@
             this.Controls.Add(this.dgvLabirinto);
             this.Name = "Form1";
             this.Text = "Caminhos em labirinto";
-            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvLabirinto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCaminhos)).EndInit();
             this.ResumeLayout(false);

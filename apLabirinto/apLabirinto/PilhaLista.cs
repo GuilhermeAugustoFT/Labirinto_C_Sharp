@@ -47,20 +47,19 @@ class PilhaLista<Dado> : ListaSimples<Dado>, IStack<Dado>, IComparable<PilhaList
     public void Exibir(DataGridView dgv)
     {
 
-        //  for (int j = 0; j < Tamanho; j++)
-        //   {
-        //      dgv[j, dgv.RowCount-1].Value = " ";
-        //  }
-
-
         var auxiliar = new PilhaLista<Dado>();
         string[] linha = new string[Tamanho];
-        int i = Tamanho - 1;
+        int i = 0;
+        if (dgv.ColumnCount < Tamanho)
+            dgv.ColumnCount = Tamanho+1;
+
         while (!this.EstaVazia)
         {
-            linha[i--] = this.OTopo().ToString();
+         
+            linha[i++] = this.OTopo().ToString();
+            
             // Thread.Sleep(3000);
-            Application.DoEvents();
+         //   Application.DoEvents();
             auxiliar.Empilhar(this.Desempilhar());
 
         }
@@ -74,7 +73,7 @@ class PilhaLista<Dado> : ListaSimples<Dado>, IStack<Dado>, IComparable<PilhaList
         return 0;
     }
 
-    public bool Equals(Object obj)
+    public override bool Equals(Object obj)
     {
         if (obj == null)
             return false;
@@ -88,7 +87,7 @@ class PilhaLista<Dado> : ListaSimples<Dado>, IStack<Dado>, IComparable<PilhaList
         if (this.Tamanho != pilha.Tamanho)
             return false;
 
-        PilhaLista<Dado> estaPilha = (PilhaLista<Dado>)this.Clone();
+        PilhaLista<Dado> estaPilha = this.Clone();
         while (!estaPilha.EstaVazia)
         {
             if (!estaPilha.Desempilhar().Equals(pilha.Desempilhar()))
@@ -96,6 +95,7 @@ class PilhaLista<Dado> : ListaSimples<Dado>, IStack<Dado>, IComparable<PilhaList
         }
         return true;
     }
+
 
     public bool Existe(Dado dado)
     {
@@ -107,7 +107,7 @@ class PilhaLista<Dado> : ListaSimples<Dado>, IStack<Dado>, IComparable<PilhaList
             return true;
 
 
-        PilhaLista<Dado> estaPilha = (PilhaLista<Dado>)this.Clone();
+        PilhaLista<Dado> estaPilha = this.Clone();
 
 
         while (!estaPilha.EstaVazia)
@@ -118,19 +118,46 @@ class PilhaLista<Dado> : ListaSimples<Dado>, IStack<Dado>, IComparable<PilhaList
 
         return false;
     }
-    public Object Clone()
+
+    public PilhaLista<Dado> Clone()
     {
-        PilhaLista<Dado> clone = new PilhaLista<Dado>();
+        return (PilhaLista<Dado>)this.MemberwiseClone();
+    }
 
-        NoLista<Dado> dado = new NoLista<Dado>(Primeiro.Info, Primeiro.Prox);
-        while (dado.Prox != null)
-        {
-            clone.Empilhar(dado.Info);
-            dado = dado.Prox;
-
-        }
-        return clone;
+    public PilhaLista()
+    {
 
     }
+
+
+    public override int GetHashCode()
+    {
+        int hash = 0;
+        PilhaLista<Dado> estaPilha = this.Clone();
+        while (!estaPilha.EstaVazia)
+        {
+            hash += estaPilha.Desempilhar().GetHashCode();
+        }
+        hash += estaPilha.Tamanho.GetHashCode();
+        if (hash < 0)
+            hash = -hash;
+        return hash;
+
+    }
+
+
+    public override string ToString()
+    {
+        string toString=" ";
+
+        PilhaLista<Dado> estaPilha = this.Clone();
+        while (!estaPilha.EstaVazia)
+        {
+            toString = toString +" " + estaPilha.Desempilhar().ToString();
+        }
+
+        return base.ToString();
+    }
+
 }
 

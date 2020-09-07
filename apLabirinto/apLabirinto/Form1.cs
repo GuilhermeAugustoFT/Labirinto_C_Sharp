@@ -15,9 +15,8 @@ namespace apLabirinto
     public partial class Form1 : System.Windows.Forms.Form
     {
 
-        PilhaLista<PilhaLista<MovimentoTemp>> pilha;
-        GrafoBacktracking oGrafo;
-        GrafoTemp umGrafo;
+        PilhaLista<PilhaLista<Movimento>> pilha;
+        Grafo umGrafo;
        
         public Form1()
         {
@@ -26,9 +25,11 @@ namespace apLabirinto
 
         private void btnAbrirArquivo_Click(object sender, EventArgs e)
         {
+        
             if (dlgAbrir.ShowDialog() == DialogResult.OK)
             {
-                umGrafo = new GrafoTemp(dlgAbrir.FileName);
+                limparDgv(dgvCaminhos);
+                umGrafo = new Grafo(dlgAbrir.FileName);
                 umGrafo.Exibir(dgvLabirinto);
             }
             
@@ -40,22 +41,13 @@ namespace apLabirinto
             pilha = umGrafo.BuscarCaminho(dgvLabirinto,dgvCaminhos);
             umGrafo.Exibir(dgvLabirinto);
             dgvCaminhos.RowCount = 1;
-            dgvCaminhos.ColumnCount = 40;
+            dgvCaminhos.ColumnCount = 50;
             while (!pilha.EstaVazia)
             {
-                
                 pilha.Desempilhar().Exibir(dgvCaminhos);
             }
-            MessageBox.Show((dgvCaminhos.RowCount - 1).ToString());
-        }
+            MessageBox.Show((dgvCaminhos.RowCount - 1).ToString() + " Caminhos encontrados!","Total de caminhos");
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dgvCaminhos_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
             
         }
 
@@ -65,10 +57,11 @@ namespace apLabirinto
             dgv.Rows.Clear();
         }
 
-        private void dgvCaminhos_SelectionChanged(object sender, EventArgs e)
+
+
+        private void dgvCaminhos_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            limparDgv(dgvLabirinto);
-            umGrafo = new GrafoTemp(dlgAbrir.FileName);
+            umGrafo = new Grafo(dlgAbrir.FileName);
             umGrafo.Exibir(dgvLabirinto);
 
             int linhaAtual = dgvCaminhos.CurrentRow.Index;
@@ -77,21 +70,23 @@ namespace apLabirinto
             string[] coords;
             string valores;
 
+            de:
             for (int i = 0; !acabou; i++)
             {
 
                 if (dgvCaminhos[i, linhaAtual].Value == null)
                 {
                     acabou = true;
-                    break;
+                    goto de;
+
                 }
 
                 valores = dgvCaminhos[i, linhaAtual].Value.ToString();
                 coords = valores.Split(marca);
 
                 dgvLabirinto[int.Parse(coords[0]), int.Parse(coords[1])].Style.BackColor = Color.Black;
-                Thread.Sleep(10);
-                Application.DoEvents();
+                //Thread.Sleep(10);
+                // Application.DoEvents();
 
             }
         }
